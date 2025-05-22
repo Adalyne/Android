@@ -24,14 +24,14 @@ Android 14 新增 `health`, `remoteMessaging`, `shortService`, `specialUse` 和 
 * 先增新一個class名字叫做`MainService`
     
 若是有用`location`需在`AndroidManifest.xml`補上以下權限
-```
+```ruby
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 ```
 
 需要前景(台)服務，需在`AndroidManifest.xml`中，`<application`上方補上以下權限，以及在`<application`中的補上`<service`。
-```
+```ruby
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
 
@@ -48,7 +48,7 @@ Android 14 新增 `health`, `remoteMessaging`, `shortService`, `specialUse` 和 
 
 * `MainService`的前景(台)服務範例
 * 和一般服務不同的是需要`Notification`和`public int onStartCommand(Intent intent, int flags, int serviceId)`
-```
+```ruby
 
 public class MainService extends Service{
     public static final String TAG = "MainService";
@@ -164,7 +164,7 @@ public class MainService extends Service{
 ```
 
 * 從`MainActivity.java`啟動Service
-```
+```ruby
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
 
